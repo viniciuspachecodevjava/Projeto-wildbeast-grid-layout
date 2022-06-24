@@ -1,0 +1,336 @@
+
+body,
+p,
+h1,
+ul,
+li,
+blockquote {
+  padding: 0px;
+  margin: 0px;
+  line-height: 1.8rem
+}
+ img{
+    max-width: 100%;
+     width:100%;
+     border-radius:5px;
+}
+body {
+  font-family: 'Vollkorn', Georgia, serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+/* GRID ABSOLUTO */
+.container{
+    display: grid;
+    grid-template-columns: minmax(160px, 1fr) 3fr 300px;
+    grid-template-areas: 
+        "header header header"
+        "sidenav content ads"
+        "footer footer footer"
+    ;
+}
+/* FIM */
+/*CABEÇALHO*/
+.header {
+  grid-area: header;
+  background: linear-gradient(135deg, #8844ee, #b07dfb);
+  padding: 30px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+}
+.logo {
+    max-width: 200px;
+    text-transform: uppercase;
+    min-width: 80px;
+}
+.logo  h1{
+    color:white;
+}
+/*FIM*/
+/*MENU DESKTOP*/
+.desktop  ul{
+    display: flex;
+    flex-wrap:wrap;
+}
+.desktop ul li a{
+    padding:1rem 2rem;
+    background-color: rgba(0,0,0,0.1);
+    color:white;
+    transition: .2s ease-in-out;
+    display: block;
+    border-radius:5px;
+}
+
+.desktop ul li a:hover{
+    background-color: rgba(0,0,0,0.5);
+}
+
+ .desktop li + li{
+    margin-left:30px;
+}
+/*FIM*/
+/*MENU LATERAL*/
+.sidenav {
+    background-color: #fafbfc;
+    padding:30px;
+    grid-area: sidenav;
+    
+}
+.sidenav ul li a{
+    display: block;
+    min-width: 5px;
+    max-width: 100px;
+    margin: 0 auto 30px auto ;
+    background-color: white;
+    padding:20px;
+    border-radius:5px;
+    transition: .1s ease;
+    box-shadow: 5px 5px 15px  rgba(44,44,44,0.15);
+}
+.sidenav ul li a:hover{
+    background-color: #b07dfb;
+}
+/*FIM*/
+/*CONTEÚDO CENTRAL*/
+.content{
+    grid-area: content;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap:30px;
+    max-width:900px;
+    padding:30px;
+    margin:0 auto;
+}
+.titulo h1{
+    font-size: 3.5rem;
+    color:#b07dfb;
+    line-height: 3rem;
+}
+.titulo span{
+    font-size:1rem;
+    color:#b07dfb;
+    font-style: italic;
+}
+.titulo h1 + span{
+    line-height: 3rem;
+}
+.caracteristicas {
+    display: flex;
+    gap:30px;
+    align-items: flex-start;
+}
+.caracteristicas div{
+    background: linear-gradient(135deg, #8844ee, #b07dfb);
+    width: 80px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 5px 5px 15px  rgba(44,44,44,0.15);
+    text-align: center;
+}
+.caracteristicas span{
+    display: block;
+}
+.numero{
+    line-height: 1;
+    padding:20px;
+    font-size: 2.5rem;
+    color:#b07dfb;
+}
+.rotulo{
+    background-color:white;
+    width:100%;
+    position: relative;
+    padding:5px 0;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius:5px;
+    color:#b07dfb;
+}
+
+.col-wide {
+    grid-column: 1 / -1;
+}
+.img1{
+    grid-row: 3 / 5;
+}
+.img2{
+    align-self: end;
+}
+.info{
+    font-size:12px;
+    max-width: 200px;
+    color:#b07dfb;
+}
+.citacao, .atributos{
+    background: linear-gradient(135deg, #8844ee, #b07dfb);
+    padding:30px;
+    color:white;
+    border-radius:5px;
+    align-self: flex-start;
+    box-shadow: 5px 5px 15px  rgba(44,44,44,0.15);
+}
+.citacao p{
+    margin: 0 auto;
+    max-width: 500px;
+    text-align: center;
+    font-size: 1.2rem
+}
+.atributos li{
+    text-align: center;
+    border-bottom: 1px solid white;
+    padding: 15px;
+}
+.informacoes p + p{
+    margin-top: 30px
+}
+.ads{
+    grid-area: ads;
+    display: grid;
+    align-content:start;
+    background-color: #fafbfc;
+    padding:30px;
+    gap:30px;
+}
+.footer{
+    grid-area:footer;
+    grid-column: 1/-1;
+    text-align: center;
+    background: linear-gradient(135deg, #8844ee, #b07dfb);
+    color:white;
+}
+/* FIM */
+/*MENU MOBILE*/
+#check{
+    display: none;
+}
+.menu .mobile{
+    grid-column: 2;
+    grid-row:1;
+    margin: auto 0 auto auto;
+    display: none;
+}
+.checkbox{
+    width:60px;
+    height:60px;
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+.trace{
+    width:100%;
+    height:8px;
+    background-color: white;
+    position: absolute;
+    border-radius:5px;
+    margin:0 auto;
+    transition:.3s ease-in-out;
+}
+.checkbox .trace:nth-child(1){
+    top:20%;
+    transform: rotate(0);
+}
+.checkbox .trace:nth-child(2){
+    top:40%;
+    transform: rotate(0);
+}
+.checkbox .trace:nth-child(3){
+    top:60%;
+    transform: rotate(0);
+}
+input[type="checkbox"]:checked ~ .checkbox .trace:nth-child(1){
+    top:50%;
+    transform: rotate(45deg);
+}
+input[type="checkbox"]:checked ~ .checkbox .trace:nth-child(2){
+    transform: translateX(-100px);
+    width:20px;
+    opacity: 0;
+    visibility: hidden;
+}
+input[type="checkbox"]:checked ~ .checkbox .trace:nth-child(3){
+    top:50%;
+    transform: rotate(-45deg);
+}
+/*FIM*/
+
+/*RESPONSIVIDADE*/
+@media (max-width:900px){
+    .container{
+        grid-template-areas: 
+           "header header header"
+            "sidenav content content"
+            "sidenav ads ads"
+            "footer footer footer"
+            ;
+    }
+    .ads img{
+        max-width:100%;
+    }
+}
+@media (max-width:768px){
+    .container{
+        grid-template-columns: 100%;
+        grid-template-areas: 
+           "header"
+            "sidenav"
+            "content"
+            "ads"
+            "footer"
+            ;
+    }
+    .header{
+        padding:10px;
+    }
+    .menu .desktop{
+        display: none;
+    }
+    .menu .desktop ul li a{
+        padding:10px 10px;
+        background: none;
+    }
+    .menu .desktop ul{
+        display: flex;
+        flex-direction: column;
+    }
+    .menu .desktop li{
+        margin-left:0;
+        border-bottom: 1px solid white;
+    }
+    .menu .mobile{
+        display: block;
+    }
+    input[type="checkbox"]:checked ~ nav{
+        display: block;
+        position:absolute;
+        left:0;
+        top:80px;
+        background: linear-gradient(135deg, #8844ee, #b07dfb);
+        width:100%;
+    }
+    .content{
+        grid-template-columns: 1fr;
+    }
+    .sidenav{
+        overflow-x: auto;
+        -webkit-overflow-scrolling:touch;
+    }
+    .sidenav ul li a{
+        margin: 0 auto 0 auto ;
+    }
+    .sidenav ul li{
+        flex:1 0 60px;
+    }
+    .sidenav ul{
+        display: flex;
+        gap:20px;
+    }
+}
+/* FIM */
