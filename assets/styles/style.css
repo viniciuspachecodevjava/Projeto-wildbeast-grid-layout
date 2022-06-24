@@ -314,7 +314,7 @@ input[type="checkbox"]:checked ~ .checkbox .trace:nth-child(3){
         top:80px;
         background: linear-gradient(135deg, #8844ee, #b07dfb);
         width:100%;
-        z-index: 999;
+        z-index: 3;
     }
     .content{
         grid-template-columns: 1fr;
@@ -322,7 +322,7 @@ input[type="checkbox"]:checked ~ .checkbox .trace:nth-child(3){
     .sidenav{
         overflow-x: auto;
         -webkit-overflow-scrolling:touch;
-        z-index:-999;
+        z-index:2;
     }
     .sidenav ul li a{
         margin: 0 auto 0 auto ;
