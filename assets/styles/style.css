@@ -308,7 +308,7 @@ input[type="checkbox"]:checked ~ .checkbox .trace:nth-child(3){
     .menu .mobile{
         display: block;
     }
-    input[type="checkbox"]:checked ~ nav{
+    input[type="checkbox"]:active ~ nav{
         display: block;
         position:absolute;
         left:0;
@@ -316,6 +316,9 @@ input[type="checkbox"]:checked ~ .checkbox .trace:nth-child(3){
         background: linear-gradient(135deg, #8844ee, #b07dfb);
         width:100%;
         z-index: 3;
+    }
+    input[type="checkbox"]:disabled ~ nav{
+        z-index: 1;
     }
     .content{
         grid-template-columns: 1fr;
